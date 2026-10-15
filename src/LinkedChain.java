@@ -1,5 +1,13 @@
 
 
+// -------------------------------------------------------------------------
+/**
+ *  Linked Chain class, builds the data structure.
+ *  @param <T>
+ * 
+ *  @author Anna-Maria Renalds 
+ *  @version Oct 15, 2026
+ */
 public class LinkedChain<T>
 {
 private Node<T> firstNode; // reference to the first node, or null
