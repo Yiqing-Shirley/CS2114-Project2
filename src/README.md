@@ -1,5 +1,16 @@
 # CS 2114 Project 2 
 
+## How to Compile and Run
+
+### Compile the Program
+Compile all Java source files in Eclipse by selecting the project and choosing **Project → Build Project**.
+
+### Run the Program
+Run `GamePlay.java` as a Java Application to start the game.
+
+### Run the Tests
+Run the test classes, including `LinkedChainTest.java`, `IngredientTest.java`, `CookingStepTest.java`, and `GameTest.java`, using the testing framework configured for the project in Eclipse.
+
 ## Reflection
 
 ### 1. What changed from our specification?
