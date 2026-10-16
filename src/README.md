@@ -1,4 +1,4 @@
-# CS 2114 Project 2 - Building for Reuse
+# CS 2114 Project 2 
 
 ## Reflection
 
