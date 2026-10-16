@@ -3,13 +3,18 @@
 ## How to Compile and Run
 
 ### Compile the Program
-Compile all Java source files in Eclipse by selecting the project and choosing **Project → Build Project**.
+Open the project in Eclipse and select **Project → Build Project** to compile the Java source files.
 
-### Run the Program
-Run `GamePlay.java` as a Java Application to start the game.
+### Run the Game
+Run `GamePlay.java` as a Java Application. The program will display the welcome message and available commands. Players can add ingredients, add or insert cooking steps, view their ingredients and cooking steps, remove items, and attempt to make a pizza.
 
 ### Run the Tests
-Run the test classes, including `LinkedChainTest.java`, `IngredientTest.java`, `CookingStepTest.java`, and `GameTest.java`, using the testing framework configured for the project in Eclipse.
+Run the test classes in Eclipse using the testing framework configured for the project:
+
+- `LinkedChainTest.java` — Tests the linked-chain collection and its operations.
+- `IngredientTest.java` — Tests ingredient information and behavior.
+- `CookingStepTest.java` — Tests cooking-step information and behavior.
+- `GameTest.java` — Tests game commands, ingredient and cooking-step management, input validation, and pizza-making outcomes.
 
 ## Reflection
 
