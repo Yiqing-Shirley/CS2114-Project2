@@ -6,7 +6,7 @@
 
 During implementation, we made several adjustments to our original specification to make the application run more smoothly and simplify the interaction between classes.
 
-The Ingredient and CookingStep classes remained relatively close to our original specification. However, we adjusted some method signatures and implementation details in other classes. For example, our specification originally described Game.userInput() as returning void, but our implementation returns a boolean. This allows GamePlay.main() to use the return value to control the game loop. When the player enters "quit", userInput() returns false, allowing the game to end without requiring a separate condition to check whether the player wants to quit. We made this adjustment during implementation to simplify game control.
+The Ingredient and CookingStep classes remained relatively close to our original specification. However, we adjusted some method signatures and implementation details in other classes. For example, our specification originally described Game.userInput() as returning void, but our implementation returns a boolean. This allows GamePlay to use the return value to control the game loop. When the player enters "quit", userInput() returns false, allowing the game to end without requiring a separate condition to check whether the player wants to quit. We made this adjustment during implementation to simplify game control.
 
 We also changed the LinkedChain.insert(int, T) method to return void rather than the boolean described in our specification. Our implementation focuses on inserting an entry at a valid position and throwing an exception when the position is invalid. These changes were made during implementation to support the functionality we needed.
 
