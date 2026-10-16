@@ -52,39 +52,39 @@ Our next steps focus on improving the variety of pizza outcomes, implementing th
 
 1. Review and balance the pizza outcomes.
 
-Both team members will discuss the different possible pizza results and decide how ingredient choices and cooking steps should affect each outcome. We will consider how to make the results interesting without making the game logic unnecessarily complicated.
+We will discuss the different possible pizza results and decide how ingredient choices and cooking steps should affect each outcome. We will consider how to make the results interesting without making the game logic unnecessarily complicated.
 
-Owners: Shirley and Anna-Maria.
+Attribution: Shirley and Anna-Maria.
 
 2. Implement the remaining pizza outcomes.
 
 Shirley will revise the game logic and add the remaining interesting outcomes, including the fire alarm and pancake scenarios, as well as other planned outcomes that are not yet implemented. We will also improve the outcome messages to make the game more engaging and consistent with its playful theme.
 
-Owner: Shirley.
+Attribution: Shirley.
 
 3. Implement the collection system.
 
 Anna-Maria will implement a system that allows players to collect or keep track of interesting pizza results. The implementation will follow the design decisions agreed upon by the team.
 
-Owner: Anna-Maria.
+Attribution: Anna-Maria.
 
 4. Test and integrate the new features.
 
-Both team members will review the integrated application and run the relevant tests after the new outcomes and collection system are implemented. We will fix any problems introduced by these changes and preserve the existing MVP functionality.
+We will review the integrated application and run the relevant tests after the new outcomes and collection system are implemented. We will fix any problems introduced by these changes and preserve the existing MVP functionality.
 
-Owners: Shirley and Anna-Maria.
+Attribution: Shirley and Anna-Maria.
 
 5. Prepare and refine the presentation slides.
 
 Anna-Maria will draft the slide text, while Shirley will integrate the material and improve the visual design. Both team members will review the slides together.
 
-Owners: Anna-Maria (slide content) and Shirley (integration and visual design).
+Attribution: Anna-Maria (slide content) and Shirley (integration and visual design).
 
 6. Revise the code if time permits.
 
 After the main features are complete, we will review the code for opportunities to reduce repetitive conditional logic and improve maintainability.
 
-Owners: Shirley and Anna-Maria.
+Attributions: Shirley and Anna-Maria.
 
 ### 2. Stretch Goals
 
@@ -100,8 +100,6 @@ We plan to implement the remaining planned outcomes, including the fire alarm an
 
 We plan to implement a system for collecting or tracking interesting pizza results. The exact behavior will be determined through team discussion before implementation.
 
-Before submission, we will compare this list against the original specification and explicitly mark every stretch goal as Committed or Dropped.
-
 ### 3. New Tests
 
 As we extend the prototype, we will add or revise tests to cover:
@@ -109,16 +107,14 @@ As we extend the prototype, we will add or revise tests to cover:
 - New pizza outcomes: Tests for the fire alarm, pancake, and other newly implemented outcomes, including the ingredient or cooking-step conditions that trigger each result.
 - Outcome combinations: Tests for relevant combinations of ingredients and cooking steps, including cases where different conditions could lead to different results.
 - Collection system: Tests for adding and retrieving collected results, handling an empty collection, and any other public methods introduced by the final design.
-- Regression testing: Tests to ensure that existing successful, failed, and weird pizza outcomes continue to work after changes to the game logic.
+- Other testing: Tests to ensure that existing successful, failed, and weird pizza outcomes continue to work after changes to the game logic.
 - Bad-input handling: Tests for any new invalid inputs or boundary cases introduced by the additional features.
-
-We will run the full test suite after integrating the new features to ensure that existing functionality continues to work.
-
+- 
 ### 4. Team Responsibilities
 
 - Shirley: Implement the remaining pizza outcomes, revise the related game logic, and integrate and improve the visual design of the presentation slides.
 - Anna-Maria: Implement the collection system and draft the presentation slide content.
-- Both team members: Discuss and balance the pizza outcomes, agree on feature requirements, review design decisions, test the integrated application, and finalize the presentation.
+- Both: Discuss and balance the pizza outcomes, agree on feature requirements, review design decisions, test the integrated application, and finalize the presentation.
 
 ## Attribution
 
@@ -134,7 +130,7 @@ We will run the full test suite after integrating the new features to ensure tha
 | GameTest.java | Yiqing | Wrote and tested unit tests for Game. |
 | GamePlay.java | Yiqing | Implemented the application entry point and gameplay loop. |
 | GamePlayTest.java | Yiqing | Wrote and tested unit tests for GamePlay. |
-| README.md | Shirley and Anna-Maria | Collaboratively discussed and wrote the Reflection and Next Steps sections. |
+| README.md | Yiqing and Anna-Maria | Collaboratively discussed and wrote the Reflection and Next Steps sections. |
 
 ### GenAI Use
 
