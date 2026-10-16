@@ -1,15 +1,13 @@
 
-
-
-
 // -------------------------------------------------------------------------
 /**
- *  Tests the LinkedChain class
+ * Tests the LinkedChain class
  * 
- *  @author Anna-Maria Renalds
- *  @version Oct 15, 2026
+ * @author Anna-Maria Renalds
+ * @version Oct 15, 2026
  */
-public class LinkedChainTest extends student.TestCase
+public class LinkedChainTest
+    extends student.TestCase
 {
     // ----------------------------------------------------------
     /**
@@ -27,17 +25,19 @@ public class LinkedChainTest extends student.TestCase
         assertEquals("B", link.get(0));
         assertEquals("A", link.get(1));
         assertEquals("[B, A]", link.toString());
-        
-        try {
+
+        try
+        {
             link.add(null);
-            
+
         }
-        catch(IllegalArgumentException e)
+        catch (IllegalArgumentException e)
         {
             assertEquals("Cannot add null to chain", e.getMessage());
         }
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the addToEnd method of the LinkedChain class.
@@ -51,9 +51,10 @@ public class LinkedChainTest extends student.TestCase
         assertEquals(2, link.size());
         assertEquals("A", link.get(0));
         assertEquals("B", link.get(1));
-      
+
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the remove method of the LinkedChain class
@@ -82,12 +83,10 @@ public class LinkedChainTest extends student.TestCase
         assertEquals("[B, D]", link.toString());
         assertTrue(link.remove("D"));
         assertEquals("[B]", link.toString());
-        
-        
 
     }
-    
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the clear method of the LinkedChain class
@@ -102,7 +101,8 @@ public class LinkedChainTest extends student.TestCase
         assertTrue(link.isEmpty());
         assertEquals("[]", link.toString());
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the get method of the LinkedChain class
@@ -111,21 +111,25 @@ public class LinkedChainTest extends student.TestCase
     {
         LinkedChain<String> link = new LinkedChain<>();
         link.addToEnd("A");
-        try {
+        try
+        {
             link.get(-1);
         }
-        catch(IndexOutOfBoundsException e)
+        catch (IndexOutOfBoundsException e)
         {
-            //caught
+            // caught
         }
-        try {
+        try
+        {
             link.get(1);
         }
-        catch(IndexOutOfBoundsException e){
-            //caught
+        catch (IndexOutOfBoundsException e)
+        {
+            // caught
         }
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the contains method of the LinkedChain class
@@ -140,10 +144,10 @@ public class LinkedChainTest extends student.TestCase
         assertTrue(link.contains("A"));
         assertTrue(link.contains("B"));
         assertFalse(link.contains("C"));
-        
 
     }
-    
+
+
     // ----------------------------------------------------------
     /**
      * Tests the count method of the LinkedChain class
@@ -160,37 +164,54 @@ public class LinkedChainTest extends student.TestCase
         assertEquals(1, link.count("B"));
         assertEquals(0, link.count("C"));
     }
-    
-    // ----------------------------------------------------------
-    /**
-     * Tests the toArray method of the LinkedChain class
-     */
-    public void testToArray()
-    {
-        LinkedChain<String> link = new LinkedChain<>();
-        link.addToEnd("A");
-        link.addToEnd("B");
-        String[] template = new String[2];
-        String[] finale = link.toArray(template);
-        assertEquals(template, finale);
-        assertEquals("A", finale[0]);
-        assertEquals("B", finale[1]);
-        
-        try {
-            link.toArray(null);
-        }
-        catch(IllegalArgumentException e)
-        {
-            assertEquals("Array must not be null", e.getMessage());
-        }
-        
-        try {
-            link.toArray(new String[1]);
-        }
-        catch(IllegalArgumentException e)
-        {
-            assertTrue((e.getMessage().contains("too small")));
-        }
-    }
 
+
+    public void testInsert()
+    {
+        LinkedChain<String> link = new LinkedChain<String>();
+
+        link.insert(0, "B");
+        assertEquals(1, link.size());
+        assertEquals("B", link.get(0));
+        link.insert(0, "A");
+        assertEquals("A", link.get(0));
+        assertEquals("B", link.get(1));
+        link.insert(1, "C");
+        assertEquals("A", link.get(0));
+        assertEquals("C", link.get(1));
+        assertEquals("B", link.get(2));
+        link.insert(link.size(), "D");
+        assertEquals("D", link.get(3));
+        assertEquals(4, link.size());
+        try
+        {
+            link.insert(-1, "X");
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            assertNotNull(e);
+            assertEquals("Index -1 out of bounds for size 4", e.getMessage());
+        }
+
+        try
+        {
+            link.insert(link.size() + 1, "X");
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            assertNotNull(e);
+            assertEquals(
+                "Index " + (link.size() + 1) + " out of bounds for size " + link.size(),
+                e.getMessage());
+        }
+        try
+        {
+            link.insert(0, null);
+        }
+        catch (IllegalArgumentException e)
+        {
+            assertNotNull(e);
+            assertEquals("Cannot add null to chain", e.getMessage());
+        }
+}
 }

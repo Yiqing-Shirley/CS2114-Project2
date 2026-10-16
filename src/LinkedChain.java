@@ -61,6 +61,48 @@ current.next = newNode;
 numberOfEntries++;
 return true;
 }
+
+
+/**
+ * Inserts a new entry at the specified position.
+ *
+ * @param index the zero-based position to insert at
+ * @param newEntry the entry to insert; must not be null
+ * @throws IndexOutOfBoundsException if index is invalid
+ * @throws IllegalArgumentException if newEntry is null
+ */
+public void insert(int index, T newEntry)
+{
+    if (index < 0 || index > numberOfEntries)
+    {
+        throw new IndexOutOfBoundsException(
+            "Index " + index + " out of bounds for size "
+            + numberOfEntries);
+    }
+
+    requireNonNull(newEntry);
+
+    if (index == 0)
+    {
+        firstNode = new Node<T>(newEntry, firstNode);
+    }
+    else
+    {
+        Node<T> previous = firstNode;
+
+        for (int i = 0; i < index - 1; i++)
+        {
+            previous = previous.next;
+        }
+
+        Node<T> newNode = new Node<T>(newEntry, previous.next);
+        previous.next = newNode;
+    }
+
+    numberOfEntries++;
+}
+
+
 /**
 * Removes and returns the first entry in this chain, if possible.
 *
@@ -192,37 +234,6 @@ return numberOfEntries;
 public boolean isEmpty()
 {
 return numberOfEntries == 0;
-}
-/**
-* Copies every entry in this chain into the given array, first entry
-* first.
-*
-* @param values an array of the correct type to fill; it must have
-* length at least size()
-* @return the array containing all entries in the chain
-* @throws IllegalArgumentException if values is null or too small
-*/
-public T[] toArray(T[] values)
-{
-if (values == null)
-{
-throw new IllegalArgumentException("Array must not be null");
-}
-if (values.length < numberOfEntries)
-{
-throw new IllegalArgumentException(
-"Array of length " + values.length
-+ " is too small for " + numberOfEntries + " entries");
-}
-int index = 0;
-Node<T> current = firstNode;
-while (current != null)
-{
-values[index] = current.data;
-index++;
-current = current.next;
-}
-return values;
 }
 /**
 * Returns a readable listing of the chain, first entry first,
