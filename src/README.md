@@ -10,8 +10,6 @@ The Ingredient and CookingStep classes remained relatively close to our original
 
 We also changed the LinkedChain.insert(int, T) method to return void rather than the boolean described in our specification. Our implementation focuses on inserting an entry at a valid position and throwing an exception when the position is invalid. These changes were made during implementation to support the functionality we needed.
 
-Another challenge was balancing our original game design with the amount of code required. Many of our ideas depended on the player's ingredient choices and combinations. Implementing every possible combination with individual conditional statements would have created a large amount of repetitive code. We discussed whether more general approaches, such as using ingredient categories, could handle these choices more efficiently. This helped us recognize the importance of balancing game complexity, maintainability, and the time available for implementation.
-
 These adjustments came from our implementation experience and team discussions. We also used GenAI to help review implementation decisions, including whether certain methods were necessary for our application.
 
 ### 2. What changed in the LinkedChain?
@@ -30,7 +28,7 @@ These changes were driven by our implementation needs and team discussion, with 
 
 Before implementation, we were unsure how well LinkedChain would support our game because we had not previously used it in a project of this kind. After implementing the application, we found that the same generic data structure could store both Ingredient and CookingStep objects. Using methods such as add(), addToEnd(), insert(), get(), and remove() helped us understand how a reusable data structure can support different application features.
 
-Another challenge was implementing different outcomes and ingredient combinations without making the program unnecessarily complicated. We learned that individual conditional statements could become difficult to maintain as the number of combinations increased. We began considering more general approaches, such as using ingredient categories to simplify the logic. However, we have not fully explored every possible way to make the game logic more extensible.
+Another challenge was balancing our original game design with the amount of code required. Many of our ideas depended on the player's ingredient choices and combinations. Implementing every possible combination with individual conditional statements would have created a large amount of repetitive code. We discussed whether more general approaches, such as using ingredient categories, could handle these choices more efficiently. This helped us recognize the importance of balancing game complexity, maintainability, and the time available for implementation.
 
 Overall, implementing the prototype helped us resolve our uncertainty about using LinkedChain. The question of how to support more complex ingredient combinations efficiently remains an area for future improvement.
 
