@@ -38,7 +38,7 @@ Overall, implementing the prototype helped us resolve our uncertainty about usin
 
 All of our current tests pass, and we have not encountered any known test failures during our current testing. The main functionality of the prototype runs successfully.
 
-However, some aspects could still be improved. The current pizza outcome messages are intentionally simple, using messages such as "Your pizza is ready!", "Your pizza failed!", and "Your pizza is weird!". These messages allow us to demonstrate the MVP without adding unnecessary complexity, but they do not fully capture the playful nature of the game.
+However, some aspects could still be improved. The current pizza outcome messages are intentionally simple, using messages such as "Your pizza is ready!", "Your pizza failed!". These messages allow us to demonstrate the MVP without adding unnecessary complexity, but they do not fully capture the playful nature of the game.
 
 The variety of implemented outcomes is also limited compared with our original ideas. Although the weird pizza outcome has been implemented, other interesting outcomes, including the fire alarm and pancake scenarios, have not yet been added. We also have not implemented the collection system that would allow players to collect or track interesting pizza results.
 
