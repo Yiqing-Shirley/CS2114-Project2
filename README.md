@@ -102,17 +102,21 @@ Attributions: Shirley and Anna-Maria.
 
 ### 2. Stretch Goals
 
-- Weird pizza outcome — Committed and completed.
+- **Pizza Title System — Committed and completed.**
 
-The current prototype recognizes unusual ingredients, including chocolate sauce, banana, and Carolina Reaper, and displays a special result for weird pizzas.
+We implemented a pizza title system that unlocks special titles when players successfully make a pizza and meet additional conditions. The implemented titles include Weird Pizza, Carnivore, Herbivore, and Fire Alarm. The `successful()` method determines whether the pizza was made correctly, while the title system checks for special achievements only after a successful pizza.
 
-- Additional pizza outcomes — Committed, not yet completed.
+- **Numbered Cooking-Step Input — Completed.**
 
-We plan to implement the remaining planned outcomes, including the fire alarm and pancake scenarios, and improve the variety of result messages. We will prioritize these changes based on the time available.
+We improved the user interface by allowing players to add cooking steps using either their names or corresponding numbers. This makes the game easier to play while preserving the original text-based commands.
 
-- Collection system — Committed, not yet completed.
+- **Collection System — Committed, not yet completed.**
 
-We plan to implement a system for collecting or tracking interesting pizza results. The exact behavior will be determined through team discussion before implementation.
+We plan to implement a system that allows players to track previously unlocked pizza titles.
+
+- **Additional Pizza Outcomes — Not yet completed.**
+
+Other planned features, including the pancake scenario, remain possible future improvements.
 
 ### 3. New Tests
 
@@ -132,19 +136,19 @@ As we extend the prototype, we will add or revise tests to cover:
 
 ## Attribution
 
-| Class or Test File | Contributor(s) | Contribution |
+| Class or File | Contributor(s) | Contribution |
 |---|---|---|
 | LinkedChain.java | Anna-Maria | Implemented and revised the linked-chain data structure. |
-| LinkedChainTest.java | Anna-Maria | Wrote and tested unit tests for LinkedChain. |
+| LinkedChainTest.java | Anna-Maria | Developed and revised unit tests for LinkedChain. |
 | Ingredient.java | Anna-Maria | Implemented the Ingredient class. |
-| IngredientTest.java | Anna-Maria | Wrote and tested unit tests for Ingredient. |
-| CookingStep.java | Anna-Maria | Implemented the CookingStep class. |
-| CookingStepTest.java | Anna-Maria | Wrote and tested unit tests for CookingStep. |
-| Game.java | Yiqing | Implemented the game logic, command handling, validation, and pizza outcomes. |
-| GameTest.java | Yiqing | Wrote and tested unit tests for Game. |
+| IngredientTest.java | Anna-Maria | Developed unit tests for Ingredient. |
+| CookingStep.java | Anna-Maria, Yiqing | Anna-Maria implemented the original class; Yiqing revised the input validation and added support for numbered cooking steps. |
+| CookingStepTest.java | Anna-Maria | Developed unit tests for CookingStep. |
+| Game.java | Yiqing | Implemented and revised the game logic, command handling, input validation, and part of the stretch goals, including the pizza title system. |
+| GameTest.java | Yiqing | Developed and revised unit tests for game commands, pizza outcomes, and additional features. |
 | GamePlay.java | Yiqing | Implemented the application entry point and gameplay loop. |
-| GamePlayTest.java | Yiqing | Wrote and tested unit tests for GamePlay. |
-| README.md | Yiqing and Anna-Maria | Collaboratively discussed and wrote the Reflection and Next Steps sections. |
+| README.md | Yiqing, Anna-Maria | Collaboratively wrote and revised the Reflection, Next Steps, and Attribution sections. |
+| Presentation Slides | Anna-Maria, Yiqing | Anna-Maria completed most of the presentation slides, while Yiqing contributed a smaller portion of the content and revisions. |
 
 ### GenAI Use
 
