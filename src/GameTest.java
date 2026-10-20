@@ -7,7 +7,7 @@ import java.io.PrintStream;
  * Tests the Game class.
  *
  * @author Yiqing
- * @version Oct 16, 2026
+ * @version Oct 20, 2026
  */
 public class GameTest extends student.TestCase
 {
@@ -309,7 +309,7 @@ public class GameTest extends student.TestCase
 
 
     /**
-     * Tests a nonnumeric insert position.
+     * Tests a not numeric insert position.
      */
     public void testNonnumericInsertPosition()
     {
@@ -408,7 +408,7 @@ public class GameTest extends student.TestCase
 
 
     /**
-     * Tests the weird pizza result.
+     * Tests unlocking the Weird Pizza title.
      */
     public void testWeirdPizza()
     {
@@ -429,11 +429,15 @@ public class GameTest extends student.TestCase
         assertTrue(game.successful());
 
         assertTrue(game.userInput());
+
         assertTrue(output.toString().contains(
-            "Your pizza is weird!"));
+            "Your pizza is ready!"));
+
+        assertTrue(output.toString().contains(
+            "Unlocked: Weird Pizza!"));
+
         assertFalse(game.userInput());
     }
-
 
     /**
      * Tests successful when there are no cooking steps.
@@ -465,7 +469,7 @@ public class GameTest extends student.TestCase
         assertFalse(game.userInput());
     }
     /**
-     * Tests that more than 20 ingredients cannot be added.
+     * Tests that more than 20 ingredients (maximum) cannot be added.
      */
     public void testAddIngredientBeyondLimit()
     {

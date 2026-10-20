@@ -4,6 +4,9 @@ import java.util.Scanner;
 /**
  * Manages the pizza-making game, including ingredients, cooking steps, player
  * commands, and pizza results.
+ * 
+ * @author Yiqing Wang
+ * @version 10/20/2026
  */
 public class Game
 {
@@ -51,6 +54,9 @@ public class Game
     }
 
 
+    /**
+     * Display the available options
+     */
     public void printAvailableOptions()
     {
         System.out.println("========== Available Ingredients ==========");
@@ -76,16 +82,21 @@ public class Game
         System.out.println();
         System.out.println("========== Available Cooking Steps ==========");
 
-        System.out.println("  Wash the vegetables");
-        System.out.println("  Precook the meats");
-        System.out.println("  Cut up the ingredients");
-        System.out.println("  Make and stretch the dough");
-        System.out.println("  Preheat the oven");
-        System.out.println("  Put the toppings on");
-        System.out.println("  Bake");
+        System.out.println("  1. Wash the vegetables");
+        System.out.println("  2. Precook the meats");
+        System.out.println("  3. Cut up the ingredients");
+        System.out.println("  4. Make and stretch the dough");
+        System.out.println("  5. Preheat the oven");
+        System.out.println("  6. Put the toppings on");
+        System.out.println("  7. Bake");
     }
 
 
+    /**
+     * Accept the player's input
+     * 
+     * @return true if player's input is valid; and false if input is invalid
+     */
     public boolean userInput()
     {
         System.out.print("Enter your command: ");
@@ -115,13 +126,11 @@ public class Game
                 System.out.println(
                     "Your pizza failed! The cooking steps are incorrect.");
             }
-            else if (hasWeirdIngredient())
-            {
-                System.out.println("Your pizza is weird!");
-            }
             else
             {
                 System.out.println("Your pizza is ready!");
+
+                checkTitles();
             }
 
             return true;
@@ -220,8 +229,7 @@ public class Game
     {
         if (ingredients.size() >= MAX_INGREDIENTS)
         {
-            System.out.println(
-                "You cannot add more than 20 ingredients.");
+            System.out.println("You cannot add more than 20 ingredients.");
             return;
         }
 
@@ -229,8 +237,8 @@ public class Game
 
         if (ingredient == null)
         {
-            System.out.println(
-                "Invalid addition. Please choose a valid ingredient.");
+            System.out
+                .println("Invalid addition. Please choose a valid ingredient.");
             return;
         }
 
@@ -244,8 +252,7 @@ public class Game
     {
         if (cookingSteps.size() >= MAX_COOKING_STEPS)
         {
-            System.out.println(
-                "You cannot add more than 20 cooking steps.");
+            System.out.println("You cannot add more than 20 cooking steps.");
             return;
         }
 
@@ -373,8 +380,7 @@ public class Game
         int sizeBeforeInsert = cookingSteps.size();
         if (sizeBeforeInsert >= MAX_COOKING_STEPS)
         {
-            System.out.println(
-                "You cannot add more than 20 cooking steps.");
+            System.out.println("You cannot add more than 20 cooking steps.");
             return;
         }
 
@@ -401,6 +407,8 @@ public class Game
         System.out.println("========== Available Commands ==========");
         System.out.println(
             "add <name>                 - Add an ingredient or cooking step");
+        System.out.println(
+            "add <number>               - Add a cooking step by number");
         System.out.println(
             "remove <name>              - Remove an ingredient or cooking step");
         System.out.println(
@@ -484,21 +492,72 @@ public class Game
     }
 
 
-    private boolean hasWeirdIngredient()
+    /**
+     * Checks and displays unlocked pizza titles.
+     */
+    public void checkTitles()
     {
+        boolean weirdPizza = false;
+        int meatCount = 0;
+        int vegetableCount = 0;
+        int bakeCount = 0;
+
+        // Check ingredients
         for (int i = 0; i < ingredients.size(); i++)
         {
-            String name = ingredients.get(i).getName();
+            Ingredient ingredient = ingredients.get(i);
+            String name = ingredient.getName();
+            String category = ingredient.getCategory();
 
             if (name.equalsIgnoreCase("Chocolate sauce")
                 || name.equalsIgnoreCase("banana")
                 || name.equalsIgnoreCase("Carolina Reaper"))
             {
-                return true;
+                weirdPizza = true;
+            }
+
+            if (category.equalsIgnoreCase("Meats"))
+            {
+                meatCount++;
+            }
+            else if (category.equalsIgnoreCase("Vegetables"))
+            {
+                vegetableCount++;
             }
         }
 
-        return false;
+        // Check cooking steps
+        for (int i = 0; i < cookingSteps.size(); i++)
+        {
+            CookingStep step = cookingSteps.get(i);
+
+            if (step.getName().equalsIgnoreCase("Bake"))
+            {
+                bakeCount++;
+            }
+        }
+
+        System.out.println("========== Pizza Titles ==========");
+
+        if (weirdPizza)
+        {
+            System.out.println("Unlocked: Weird Pizza!");
+        }
+
+        if (meatCount >= 3 && meatCount > vegetableCount)
+        {
+            System.out.println("Unlocked: Carnivore!");
+        }
+
+        if (vegetableCount >= 3 && vegetableCount > meatCount)
+        {
+            System.out.println("Unlocked: Herbivore!");
+        }
+
+        if (bakeCount >= 3)
+        {
+            System.out.println("Unlocked: Fire Alarm!");
+        }
     }
 
 }

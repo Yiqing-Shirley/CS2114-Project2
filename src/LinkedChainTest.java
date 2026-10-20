@@ -165,7 +165,10 @@ public class LinkedChainTest
         assertEquals(0, link.count("C"));
     }
 
-
+ // ----------------------------------------------------------
+    /**
+     * Tests the insert method of the LinkedChain class
+     */
     public void testInsert()
     {
         LinkedChain<String> link = new LinkedChain<String>();
