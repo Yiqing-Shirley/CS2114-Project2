@@ -50,13 +50,13 @@ Overall, implementing the prototype helped us resolve our uncertainty about usin
 
 ### 4. What doesn't work yet?
 
-All of our current tests pass, and we have not encountered any known test failures during our current testing. The main functionality of the prototype runs successfully.
+All of our current JUnit tests pass, and the main game functionality works as expected. We have also completed part of our stretch goals, including the pizza title system and numbered cooking-step input.
 
-However, some aspects could still be improved. The current pizza outcome messages are intentionally simple, using messages such as "Your pizza is ready!", "Your pizza failed!". These messages allow us to demonstrate the MVP without adding unnecessary complexity, but they do not fully capture the playful nature of the game.
+The title system allows players to unlock special titles such as Weird Pizza, Carnivore, Herbivore, and Fire Alarm after successfully making a pizza. We also improved the user interface by allowing players to enter cooking steps using either their names or numbers.
 
-The variety of implemented outcomes is also limited compared with our original ideas. Although the weird pizza outcome has been implemented, other interesting outcomes, including the fire alarm and pancake scenarios, have not yet been added. We also have not implemented the collection system that would allow players to collect or track interesting pizza results.
+However, some planned features are still incomplete. The collection system for tracking unlocked titles has not yet been implemented, and additional ideas such as the pancake scenario remain future improvements.
 
-These features remain future work rather than known failures in the current prototype. Our next steps will focus on expanding the outcomes, improving their descriptions, and implementing the collection system if time permits.
+We would also like to improve the variety of game messages and continue testing different ingredient combinations. These are areas for further development rather than known failures in the current application.
 
 ## Next Steps
 
@@ -130,9 +130,9 @@ As we extend the prototype, we will add or revise tests to cover:
 - 
 ### 4. Team Responsibilities
 
-- Shirley: Implement the remaining pizza outcomes, revise the related game logic, and integrate and improve the visual design of the presentation slides.
-- Anna-Maria: Implement the collection system and draft the presentation slide content.
-- Both: Discuss and balance the pizza outcomes, agree on feature requirements, review design decisions, test the integrated application, and finalize the presentation.
+- Yiqing: Game logic, code revisions, implementation of part of the stretch goals, and a smaller portion of the presentation slides.
+- Anna-Maria: LinkedChain and supporting classes, the planned collection system, and most of the presentation slides.
+- Both: Testing, reviewing implementation decisions, and finalizing the project.
 
 ## Attribution
 
